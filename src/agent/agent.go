@@ -22,7 +22,7 @@ var (
 
 var usage = `Usage:%s [options]
 	Options are:
-		-h host 	Connect to remote redis server
+		-r host 	Connect to remote redis server
 		-d directory 	Set config root directory
 `
 
@@ -30,7 +30,7 @@ func main() {
 	flag.Usage = func() {
 		fmt.Fprintf(os.Stderr, usage, os.Args[0])
 	}
-	flag.StringVar(&host, "h", "127.0.0.1:6379", "")
+	flag.StringVar(&host, "r", "127.0.0.1:6379", "")
 	flag.StringVar(&dir, "d", "/data/config", "")
 	flag.Parse()
 	ip, err := util.GetLocalIp()
