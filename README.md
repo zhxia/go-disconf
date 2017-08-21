@@ -15,6 +15,8 @@
 # 运行
  
  - 启动redis Server
+ 
+    <code>redis-server -h 192.168.33.200 -p 6379</code>
  - 启动server端: 
  
      <code>./server -r 192.168.33.200:6379 -h 192.168.33.100:8487 </code>
@@ -23,5 +25,5 @@
      <code>./agent -r 192.168.33.200:6379 -d /data/config </code>
  - 下发配置:
  
-  <code>curl -X post --data '{"sid":"8113197b-c4cc-4cf8-830e-8257bbc8b59d","dest":"/data/config/service-mm2.conf","data":"{\"servers\":[{\"host\":\"127.0.0.1\",\"port\":10010,\"weigth\":20,\"status\":\"online\"},{\"host\":\"127.0.0.2\",\"port\":10010,\"weigth\":20,\"status\":\"online\"}]}"}' http://192.168.33.100:8487/sendMessage</code>
+    <code>curl -X post --data '{"sid":"8113197b-c4cc-4cf8-830e-8257bbc8b59d","dest":"/data/config/service-mm2.conf","data":"{\"servers\":[{\"host\":\"127.0.0.1\",\"port\":10010,\"weigth\":20,\"status\":\"online\"},{\"host\":\"127.0.0.2\",\"port\":10010,\"weigth\":20,\"status\":\"online\"}]}"}' http://192.168.33.100:8487/sendMessage</code>
  
